@@ -1,0 +1,126 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/tasks/tasks",
+			"style": {
+				"navigationBarTitleText": "任务"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "Alpha"
+			}
+		},
+		{
+			"path": "pages/groups/groups",
+			"style": {
+				"navigationBarTitleText": "社群"
+			}
+		},
+		{
+			"path": "pages/discover/discover",
+			"style": {
+				"navigationBarTitleText": "发现"
+			}
+		},
+		{
+			"path": "pages/me/me",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/taskDetail/taskDetail",
+			"style": {
+				"navigationBarTitleText": "任务详情"
+			}
+		},
+		{
+			"path": "pages/groupDetail/groupDetail",
+			"style": {
+				"navigationBarTitleText": "社群详情"
+			}
+		},
+		{
+			"path": "pages/chat/chat",
+			"style": {
+				"navigationBarTitleText": "聊天"
+			}
+		},
+		{
+			"path": "pages/myGroups/myGroups",
+			"style": {
+				"navigationBarTitleText": "我的社群"
+			}
+		},
+		{
+			"path": "pages/myTasks/myTasks",
+			"style": {
+				"navigationBarTitleText": "我的任务"
+			}
+		},
+		{
+			"path": "pages/schedule/schedule",
+			"style": {
+				"navigationBarTitleText": "日程表"
+			}
+		},
+		{
+			"path": "pages/following/following",
+			"style": {
+				"navigationBarTitleText": "我的关注"
+			}
+		},
+		{
+			"path": "pages/achievements/achievements",
+			"style": {
+				"navigationBarTitleText": "成就徽章"
+			}
+		},
+		{
+			"path": "pages/invite/invite",
+			"style": {
+				"navigationBarTitleText": "邀请好友"
+			}
+		},
+		{
+			"path": "pages/friends/friends",
+			"style": {
+				"navigationBarTitleText": "我的好友"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "Alpha",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#F5F5F5",
+		"navigationStyle": "default"
+	},
+	"tabBar": {
+		"color": "#666666",
+		"selectedColor": "#00D4AA",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "black",
+		"list": [
+			{
+				"pagePath": "pages/tasks/tasks",
+				"text": "任务"
+			},
+			{
+				"pagePath": "pages/groups/groups",
+				"text": "社群"
+			},
+			{
+				"pagePath": "pages/discover/discover",
+				"text": "发现"
+			},
+			{
+				"pagePath": "pages/me/me",
+				"text": "我的"
+			}
+		]
+	},
+	"uniIdRouter": {}
+}
