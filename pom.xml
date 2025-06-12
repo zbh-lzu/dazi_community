@@ -1,0 +1,212 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="
+           http://maven.apache.org/POM/4.0.0
+           http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- 父 POM：Spring Boot 3.5.0 -->
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.example</groupId>
+    <artifactId>demo-app</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>demo-app</name>
+    <description>示例项目：Spring Boot 3.5 + Java 21/24 + MyBatis / MyBatis-Plus + MySQL 8.4 + Redis 7.4 + RabbitMQ 3.13 + RocketMQ 5.3.3 + Kafka 4.0.0 + Elasticsearch 8.18</description>
+
+    <!-- =========================
+         全局属性
+         ========================= -->
+    <properties>
+        <!-- Java 版本：可切换到 24 -->
+        <java.version>21</java.version>
+
+        <!-- MyBatis / MyBatis-Spring-Boot 版本 -->
+        <mybatis.spring.boot.version>3.0.4</mybatis.spring.boot.version>
+        <!-- MyBatis-Plus 版 BOM -->
+        <mybatis.plus.version>3.5.12</mybatis.plus.version>
+
+        <!-- MySQL Connector/J 8.4.5 对应 MySQL 8.4 LTS -->
+        <mysql.connector.version>8.4.5</mysql.connector.version>
+
+        <!-- RocketMQ Spring Boot Starter 2.3.3 -->
+        <rocketmq.spring.boot.version>2.3.3</rocketmq.spring.boot.version>
+    </properties>
+
+    <!-- =========================
+         依赖管理（BOM）
+         ========================= -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- MyBatis-Plus BOM，含 MyBatis 及相关依赖对齐 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-bom</artifactId>
+                <version>${mybatis.plus.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Spring Boot 管理其他依赖的版本，无需手动指定 -->
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- =========================
+         项目依赖
+         ========================= -->
+    <dependencies>
+
+        <!-- ===== Spring Boot 核心 ===== -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- Web (可选，如果你需要提供 REST 接口、MVC 层等) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- =========================
+             MyBatis & MyBatis-Plus
+             ========================= -->
+
+        <!-- MyBatis-Spring-Boot Starter -->
+<!--        <dependency>-->
+<!--            <groupId>org.mybatis.spring.boot</groupId>-->
+<!--            <artifactId>mybatis-spring-boot-starter</artifactId>-->
+<!--            <version>${mybatis.spring.boot.version}</version>-->
+<!--        </dependency>-->
+
+        <!-- MyBatis-Plus Boot Starter (版本由 BOM 管理，故此处不写 <version>) -->
+<!--        <dependency>-->
+<!--            <groupId>com.baomidou</groupId>-->
+<!--            <artifactId>mybatis-plus-boot-starter</artifactId>-->
+<!--        </dependency>-->
+
+        <!-- =========================
+             数据库：MySQL 8.4 LTS
+             ========================= -->
+
+<!--        <dependency>-->
+<!--            <groupId>mysql</groupId>-->
+<!--            <artifactId>mysql-connector-java</artifactId>-->
+<!--        </dependency>-->
+        <!-- =========================
+             缓存 / Key-Value 存储：Redis 7.4
+             ========================= -->
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-data-redis</artifactId>-->
+<!--        </dependency>-->
+        <!-- Lettuce 客户端（Spring Boot 默认已经拉取 Lettuce 6.3，直接兼容 Redis 7.4） -->
+
+        <!-- =========================
+             消息队列：RabbitMQ 3.13
+             ========================= -->
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-amqp</artifactId>-->
+<!--        </dependency>-->
+
+        <!-- =========================
+             消息队列：RocketMQ 5.3.3
+             ========================= -->
+
+<!--        <dependency>-->
+<!--            <groupId>org.apache.rocketmq</groupId>-->
+<!--            <artifactId>rocketmq-spring-boot-starter</artifactId>-->
+<!--            <version>${rocketmq.spring.boot.version}</version>-->
+<!--        </dependency>-->
+
+        <!-- =========================
+             消息队列：Kafka 4.0.0
+             ========================= -->
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.kafka</groupId>-->
+<!--            <artifactId>spring-kafka</artifactId>-->
+<!--            &lt;!&ndash; 版本由 Spring Boot 3.5 管理，Spring for Kafka 4.0.x &ndash;&gt;-->
+<!--        </dependency>-->
+
+        <!-- =========================
+             搜索引擎：Elasticsearch 8.18.x
+             ========================= -->
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>-->
+<!--            &lt;!&ndash; Spring Data Elasticsearch 5.5.x 支持 ES 8.18 &ndash;&gt;-->
+<!--        </dependency>-->
+
+        <!-- =========================
+             其他常见依赖（日志、配置等）
+             ========================= -->
+
+
+<!--        &lt;!&ndash; 如果需要 Validation &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-validation</artifactId>-->
+<!--        </dependency>-->
+
+        <!-- Lombok（可选） -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- 测试依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <!-- =========================
+         构建配置
+         ========================= -->
+    <build>
+        <plugins>
+
+            <!-- Spring Boot Maven 插件 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Maven Compiler 插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
